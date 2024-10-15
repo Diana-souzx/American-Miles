@@ -6,6 +6,7 @@ A identidade visual da American Miles é representada por uma arara azul, que si
 * Funcionalidades
 
 Será composto por Login/Registro, Página Inicial e Página de Pagamento (Check Out): 
+
 Login/Registro: Página de login onde o usuário irá entrar com seu o login ou espaço para criar sua conta;
 
 Página Inicial: 
