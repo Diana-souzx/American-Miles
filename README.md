@@ -12,5 +12,5 @@ Página Inicial:
   * Carrinho de Compras: Um botão aonde o cliente poderá acessar suas passagens selecionadas e ir para a página de pagamento. 
   * Pacotes: Mostrar promoções de pacotes (hotel + passagem). 
   * Rodapé: Informações de contato, links para redes sociais, sobre nós. 
-  * Lista de destinos populares; Imagens e breves descrições de cada destino, botão de compra. 
+  * Lista de destinos populares; Imagens e breves descrições de cada destino, botão de compra.
 Página de Pagamento (Check Out): Formulário de reserva, onde o cliente insere seus dados pessoais e de pagamento. Mostrando o total da compra.
