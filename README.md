@@ -1,4 +1,6 @@
-Será composto por Login/Registro, Página Inicial e Página de Pagamento (Check Out):
+American Miles
+
+Nosso software será composto por Login/Registro, Página Inicial e Página de Pagamento (Check Out):
 
 Login/Registro: Página de login onde o usuário irá entrar com seu o login ou espaço para criar sua conta;
 
