@@ -11,6 +11,7 @@
         $email = htmlspecialchars($_POST['email']);
         $senha = intval($_POST['senha'])
         
+        
         $dados = [
             'nome' => $nome,
             'email' => $email,

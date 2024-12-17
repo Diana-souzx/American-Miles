@@ -46,4 +46,10 @@ body{
     display: flex;
     justify-content: center;
 }
+#imagemPerfil{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(122, 120, 120);
+}
 

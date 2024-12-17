@@ -8,16 +8,46 @@
 </head>
 <body>
     <header id="cabeçalho">
-        <img src="../img/logoAm.png" alt="Logo">
-        <button id="perfil"><img src="../img/perfil.png" alt="Perfil" style="width: 50px; height: 50px;"></button>
-        <button id="carrinho"><img src="../img/carrinho.png" alt="Carrinho" style="width: 50px; height: 50px;"></button>
+        <img id="logo" src="../img/logoAm.png" alt="Logo">
+        <div id="botoes">
+        <button id="perfil"><img src="../img/perfil.png" alt="Perfil" style="width: 40px; height: 40px;"></button>
+        <button id="carrinho"><img src="../img/carrinho.png" alt="Carrinho" style="width: 40px; height: 40px;"></button>
+    </div>
     </header>
+    <main id="conteudo">
+        <h1>Destinos</h1>
+         
+        
+        <div  id="argentina" class="países">
+            <div class="nome-pais">
+                <img src="../img/bandeira-argentina.png" alt="Argenina"><h4>Argentina</h4>
+            </div>
+            <div class="submit">
+                <button class="descrição"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button> 
+                <button class="levar-carrinho"><img src="../img/carrinho.png" alt="carrinho" style="width: 40px; height: 40px;"></button>
+            </div>
+        </div>
+
+
+    </main><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <aside id="janelaCar" class="janelaCar" > 
+        <div id="superior">
+            <h2>Carrinho de Compras</h2> 
+            <button id="fecharCarrinho"> X </button>
+        </div>
+        <ul id="itens-carrinho"></ul> 
+        <button id="botaoFinalizar">Finalizar Compra</button> 
+    </aside>
+
     <footer id="rodapé">
+        <div id="conteudoRoda">
         <button id="botao1">Sobre nós ⇩</button>
         <a href="https://pin.it/7yxmng0dQ" id="botao3">Pinterest</a>
-        <p> <b>Contato</b> <br>
+        <p> <b>Contato</b> <br><br>
             0800 4002 <br>
             americammiles@gmail.com</p>
+        </div>
     </footer>
 </body>
 <script src="../PaginaInicial/inicial.js"></script>

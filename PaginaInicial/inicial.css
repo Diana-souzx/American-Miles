@@ -1,3 +1,7 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
 body{
     background-color: #1B375C;
     color: white;
@@ -10,8 +14,9 @@ body{
     border: 0px;
     cursor: pointer;
     position: absolute;
-    top: 15%;
-    left: 90%;
+    top: 5%;
+    left: 94%;
+
 }
 #botao1{
     background-color: #1e4e8d;
@@ -23,7 +28,12 @@ body{
 }
 #rodapé{
     background-color: #1e4e8d;
-  
+}
+#conteudoRoda{
+   display: flex;
+    align-items: center;
+   margin-left: 50px;
+   gap: 450px;
 }
 #perfil{
     background-color: #1e4e8d;
@@ -33,3 +43,95 @@ body{
     top: 5%;
     left: 90%;
 }
+#conteudo,#cabeçalho,#rodapé{
+    padding: 20px
+}
+#conteudo{
+    flex: 1;
+}
+#logo{
+    width: 90px;
+    height: 90px;
+}
+.janelaCar{
+    position: fixed; 
+    right: -30px; 
+    top: 0; 
+    width: 300px; 
+    height: 100%; 
+    background-color: white; 
+    border-left: 1px solid white; 
+    padding: 20px; 
+    transition: right 0.3s;
+    display: none;
+    color: black;
+   
+}
+.carrinho.open{
+    right: 0;
+}
+.janelaCar.open{
+    display: block;
+}
+#botaoFinalizar{
+    background-color:#1E4E8D ;
+    cursor: pointer;
+    border-radius: 30px;
+    border-color: #1E4E8D;
+    width: 200px;
+    height: 40px;
+    color: white;
+    margin-top: 170%;
+   margin-left: 40px;
+}
+#botaoFinalizar:hover{
+    background-color: rgb(70, 112, 201);
+}
+#superior{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#fecharCarrinho{
+    background-color: rgb(133, 170, 255);
+    border: 1;
+    border-color: rgb(133, 170, 255);
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#fecharCarrinho:hover{
+    background-color: #a1bcdf;
+    border-color:#a1bcdf ;
+}
+
+.países{
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    position: absolute;
+    color: black;
+    
+}
+.levar-carrinho{
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+}
+.nome-pais{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.submit{
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+.descrição{
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+}
+
