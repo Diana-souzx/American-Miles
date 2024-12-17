@@ -7,7 +7,16 @@
 </head>
 <body>
     <?php 
+        $nome = htmlspecialchars($_POST['nome']);
+        $email = htmlspecialchars($_POST['email']);
+        $senha = intval($_POST['senha'])
         
+        $dados = [
+            'nome' => $nome,
+            'email' => $email,
+            'senha' => $senha,
+            'foto' => $fotoURL,
+        ];
     ?>
 </body>
 </html>
