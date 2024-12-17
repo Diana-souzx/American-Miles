@@ -5,30 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../login/login.css">
 </head>
 <body>
-    <div class="login container">
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-
-        </div>
-
-        <div class="login box">
-            <h2>Login</h2>
+    <div id="logo">
+        <img src="../img/logoAm.png" alt="Logo">
+    </div>
+    <div id="loginContainer">
+            <h1 id="titulo">Login</h1>
             <form>
-                <div class="input group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-                <div class="input group">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div><br>
+                
+                <div class="input-group">
                     <label for="password">Senha</label>
                     <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit">ENTRAR</button>
+                </div><br>
+                
             </form>
+           
+            <div id="button">
+                <button id="botao">ENTRAR</button>
+            </div>
+            <div id="cadastre-se">
+                <p>Você não é cadastrado? 
+                <a href="../Página de Cadastro/cadastro.html">Cadastre-se</a></p>
+            </div>
 
-        </div>
     </div>
 </body>
+<script src="./log.js"></script>
 </html>

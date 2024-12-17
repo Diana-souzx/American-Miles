@@ -1,0 +1,35 @@
+body{
+    background-color: #1B375C;
+    color: white;
+}
+#cabeçalho{
+    background-color: #1e4e8d;
+}
+#carrinho{
+    background-color: #1e4e8d;
+    border: 0px;
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    left: 90%;
+}
+#botao1{
+    background-color: #1e4e8d;
+    border: 0px;
+    color: white;
+}
+#botao3{
+    color: rgb(250, 3, 3);
+}
+#rodapé{
+    background-color: #1e4e8d;
+  
+}
+#perfil{
+    background-color: #1e4e8d;
+    border: 0px;
+    cursor: pointer;
+    position: absolute;
+    top: 5%;
+    left: 90%;
+}

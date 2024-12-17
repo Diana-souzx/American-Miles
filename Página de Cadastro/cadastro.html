@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Agência de Viagens - Página de Cadastro">
-    <link rel= "stylesheet" href="cadastro.css">
+    <link rel= "stylesheet" href="../Página de Cadastro/cadastro.css">
     <title>Cadastro</title>
 </head>
 <body>
     <div class="logo">
-        <img src="img/logo.png" alt="Logo" style= "width: 70%; height: 70%;">
+        <img src="../img/logo.png" alt="Logo" style="width: 70%; height: 70%;">
     </div>
     <div class=" cadastro container">
         
-        <h2>CADASTRO</h2>
+        <h2 id="titulo">CADASTRO</h2>
         
-        <form action="success.html" method="POST">
+        <form action="../PaginaInicial/inicial.html" method="POST">
 
             <div class="input-group">
                 <label for="name">Nome:</label>
@@ -32,8 +32,9 @@
                 <input type="password" id="password" name="password" required>
             </div>
             
-            <button type="submit">Confirmar</button>
+            <button id="botãocadastro">Confirmar</button>
         </form>
     </div>
 </body>
+<script src="./cadastro.js"></script>
 </html>

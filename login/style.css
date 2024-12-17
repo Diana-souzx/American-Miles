@@ -9,7 +9,7 @@ body, html {
 
 
 .background {
-    background-image: url(img/imgfundo.jpeg);
+    background-image: url(../img/imgfundo.jpeg);
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 

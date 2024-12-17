@@ -1,0 +1,52 @@
+#loginContainer{
+    padding: 55px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 200px;
+     height: 300px;
+}
+body{
+    background-image: url(../img/imgfundo.jpeg);
+    display: flex;
+    justify-content: center;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    font-family: Arial, sans-serif; 
+}
+#logo{
+    display: flex;
+    justify-content: center;
+}
+#titulo{
+    display: flex;
+    justify-content: center;
+}
+#botao{
+    background-color:#1E4E8D ;
+    cursor: pointer;
+    border-radius: 30px;
+    border-color: #1E4E8D;
+    width: 120px;
+    height: 30px;
+}
+#button{
+    display: flex;
+    justify-content: center;
+}
+#botao:hover{
+    background-color: rgb(70, 112, 201);
+}
+#password,#email{
+    border-radius: 30px;
+    height: 30px;
+    width: 190px;
+    border: 1px solid #ccc;;
+}
+
