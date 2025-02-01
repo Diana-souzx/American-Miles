@@ -18,3 +18,5 @@ Página Inicial:
 
 Página de Pagamento (Check Out): Formulário de reserva, onde o cliente insere seus dados pessoais e de pagamento. Mostrando o total da compra.
 
+Link Git: https://github.com/Diana-souzx/American-Miles
+Link Trello: https://trello.com/b/AJytrD9f/american-miles
