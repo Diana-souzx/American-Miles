@@ -10,26 +10,645 @@
     <header id="cabeçalho">
         <img id="logo" src="../img/logoAm.png" alt="Logo">
         <div id="botoes">
-        <button id="perfil"><img src="../img/perfil.png" alt="Perfil" style="width: 40px; height: 40px;"></button>
-        <button id="carrinho"><img src="../img/carrinho.png" alt="Carrinho" style="width: 40px; height: 40px;"></button>
-    </div>
+
+            <button id="perfil"><img id="imagemPerfil" src="../img/perfil.png" alt="" ></button>
+            <button id="carrinho"><img src="../img/carrinho.png" alt="Carrinho" style="width: 40px; height: 40px;"></button>
+        </div>
     </header>
     <main id="conteudo">
         <h1>Destinos</h1>
          
-        
-        <div  id="argentina" class="países">
-            <div class="nome-pais">
-                <img src="../img/bandeira-argentina.png" alt="Argenina"><h4>Argentina</h4>
+        <div id="pagina" clas="pagina">
+
+            <div  id="argentina" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-argentina.png" alt="Argenina"><h4>Argentina</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button> 
+                </div>
             </div>
-            <div class="submit">
-                <button class="descrição"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button> 
-                <button class="levar-carrinho"><img src="../img/carrinho.png" alt="carrinho" style="width: 40px; height: 40px;"></button>
+
+            <div id="peru" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-peru.png" alt="peru"><h4>Peru</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição1"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
             </div>
+
+            <div id="paraguai" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-paraguai.png" alt="paraguai"><h4>Paraguai</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição2"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="chile" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-chile.png" alt="chile"><h4>Chile</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição3"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="equador" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-equador.png" alt="equador"><h4>Equador</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição4"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="colombia" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-colombia.png" alt="colombia"><h4>Colômbia</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição5"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="uruguai" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-uruguai.png" alt="uruguai"><h4>Uruguai</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição6"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="guianaFrancesa" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-guianaFrancesa.png" alt="guianaFrancesa"><h4>Guiana Francesa</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição7"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="bolivia" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-bolivia.png" alt="bolivia"><h4>Bolívia</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição8"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="suriname" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-suriname.png" alt="bolivia"><h4>Suriname</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição9"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="guiana" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-guiana.png" alt="guiana"><h4>Guiana</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição10"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="venezuela" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-venezuela.png" alt="vanezuela"><h4>Venezuela</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição11"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <!--pacotes-->
+
+            <div id="argpac" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-argentina.png" alt="argentina"><h4>Argentina + Hotel</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição12"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="perupac" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-peru.png" alt="peru"><h4>Peru + Hotel</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição13"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="chilepac" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-chile.png" alt="peru"><h4>Chile + Hotel</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição14"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="urupac" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-uruguai.png" alt="peru"><h4>Uruguai + Hotel</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição15"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="bolipac" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-bolivia.png" alt="peru"><h4>Bolívia + Hotel</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição16"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+            <div id="venepac" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-venezuela.png" alt="peru"><h4>Bolívia + Hotel</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição17"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
+
+            <!--anuncios-->
+
+            <button id="natura"><img id="nat" src="../img/anuncio-natura.jpg" alt="natura"></button>
+
+            <button id="eudora"><img id="eud" src="../img/eudora.webp" alt="eudora"></button>
+
         </div>
+        <h1 id="pac">Pacotes </h1>
+
+    </main><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br>
+
+    <!--aside paises-->
+    <aside class="pais" id="pais">
+        <div class="cima">
+            <img src="../img/bandeira-argentina.png" alt="Argentina"><h2>Argentina</h2>
+            <button class="fechardesc" id="fechardesc"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-buenos.jpg" alt="foto1"><img class="imgs" src="../img/foto2-buenos.jpg" alt="foto2"><img class="imgs" src="../img/foto3-buenos.jpg" alt="">
+        </div><br>
+        <div class="fala">
+            <p>Argentina é um país diversificado e encantador localizado na América do Sul, conhecido por suas vastas paisagens que vão das geleiras da Patagônia aos vinhedos de Mendoza e às florestas de Misiones. Buenos Aires, sua capital, é o centro cultural, oferecendo uma combinação de elegância europeia e paixão latina. A cultura argentina é vibrante, com destaque para o tango, a gastronomia (especialmente vinhos e carnes), e a paixão nacional pelo futebol.</p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Buenos Aires</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        </div>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais1">
+        <div class="cima">
+            <img src="../img/bandeira-peru.png" alt="peru"><h2>Peru</h2>
+            <button class="fechardesc" id="fechardesc1"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-lima.jpg" alt="foto1"><img class="imgs" src="../img/foto2-lima.avif" alt="foto2"><img class="imgs" src="../img/foto3-lima.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>O Peru é conhecido por sua rica história, sendo o berço da civilização Inca. Com uma cultura vibrante que mistura tradições indígenas e influências espanholas, o país oferece paisagens diversas, desde a costa até a Amazônia.
+                Lima, a vibrante capital do Peru, é uma cidade que harmoniza a história e a modernidade de maneira encantadora. Situada na costa do Oceano Pacífico, Lima é o coração econômico, político e cultural do país.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Lima</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        </div>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais2">
+        <div class="cima">
+            <img src="../img/bandeira-paraguai.png" alt="paraguai"><h2>Paraguai</h2>
+            <button class="fechardesc" id="fechardesc2"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-assunção.png" alt="foto1"><img class="imgs" src="../img/foto2-assunção.webp" alt="foto2"><img class="imgs" src="../img/foto3-assunção.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Paraguai, um país de paisagens deslumbrantes, rica cultura e hospitalidade calorosa. Com natureza exuberante, tradição vibrante e aventuras emocionantes, o Paraguai oferece experiências autênticas e inesquecíveis.
+                Assunção é uma cidade vibrante e cheia de história, fundada em 1537. Com um centro histórico rico em arquitetura colonial, uma vida urbana dinâmica, uma cena gastronômica diversificada e várias opções de atividades ao ar livre, Assunção harmoniza o antigo e o novo de maneira encantadora. É um centro de educação e cultura, oferecendo uma hospitalidade calorosa.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Assunção</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        </div>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais3">
+        <div class="cima">
+            <img src="../img/bandeira-chile.png" alt="chile"><h2>Chile</h2>
+            <button class="fechardesc" id="fechardesc3"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-santiago.jpg" alt="foto1"><img class="imgs" src="../img/foto2-chile.jpg" alt="foto2"><img class="imgs" src="../img/foto3-santiago.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>O Chile oferece uma diversidade incrível, desde o deserto do Atacama até as geleiras da Patagônia. Com uma rica herança cultural e uma culinária deliciosa, é perfeito para aventuras, exploração e experiências autênticas. Os chilenos são conhecidos por sua hospitalidade, fazendo com que todos se sintam bem-vindos.
+                Santiago é uma cidade cosmopolita que combina tradição e modernidade. Com bairros históricos, uma vida urbana dinâmica, uma cena gastronômica diversificada e várias opções de atividades ao ar livre, Santiago é o centro cultural do Chile e oferece algo para todos os gostos.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Santiago</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        </div>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais4">
+        <div class="cima">
+            <img src="../img/bandeira-equador.png" alt="equador"><h2>Equador</h2>
+            <button class="fechardesc" id="fechardesc4"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-quito.jpg" alt="foto1"><img class="imgs" src="../img/foto2-quito.jpg" alt="foto2"><img class="imgs" src="../img/foto3-quito.webp" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>O Equador é um país repleto de diversidade natural, cultura rica e uma história vibrante. Desde a Amazônia até os Andes e as ilhas Galápagos, o Equador oferece uma infinidade de experiências inesquecíveis.
+                Quito, situada nos Andes, é uma cidade histórica e culturalmente rica, com um centro histórico que é Patrimônio Mundial da UNESCO. Com bairros charmosos, uma gastronomia diversificada e várias opções de atividades ao ar livre, Quito oferece uma combinação única de charme colonial e modernidade.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Quito</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        </div>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais5">
+        <div class="cima">
+            <img src="../img/bandeira-colombia.png" alt="colombia"><h2>Colômbia</h2>
+            <button class="fechardesc" id="fechardesc5"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-bogota.jpg" alt="foto1"><img class="imgs" src="../img/foto2-bogota.jpg" alt="foto2"><img class="imgs" src="../img/foto3-bogota.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>O Equador é um país repleto de diversidade natural, cultura rica e uma história vibrante. Desde a Amazônia até os Andes e as ilhas Galápagos, o Equador oferece uma infinidade de experiências inesquecíveis.
+                Quito, situada nos Andes, é uma cidade histórica e culturalmente rica, com um centro histórico que é Patrimônio Mundial da UNESCO. Com bairros charmosos, uma gastronomia diversificada e várias opções de atividades ao ar livre, Quito oferece uma combinação única de charme colonial e modernidade.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Quito</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        </div>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais6">
+        <div class="cima">
+            <img src="../img/bandeira-uruguai.png" alt="uruguai"><h2>Uruguai</h2>
+            <button class="fechardesc" id="fechardesc6"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-monte.avif" alt="foto1"><img class="imgs" src="../img/foto2-monte.jpg" alt="foto2"><img class="imgs" src="../img/foto3-monte.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>O Uruguai é conhecido por suas paisagens deslumbrantes, cultura rica e hospitalidade acolhedora. Oferece praias tranquilas, cidades charmosas e uma culinária deliciosa, incluindo o famoso churrasco (asado) e o chivito.
+                Montevidéu é uma cidade cheia de vida e história, com um centro histórico encantador, praias bonitas e uma gastronomia diversificada. Explore a Rambla à beira-mar e os bairros vibrantes como Pocitos e Punta Carretas. Montevidéu celebra a cultura com museus, teatros e um dos carnavais mais longos do mundo.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Montevidéu</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais7">
+        <div class="cima">
+            <img src="../img/bandeira-guianaFrancesa.png" alt="guianaFrancesa"><h2>Guiana Francesa</h2>
+            <button class="fechardesc" id="fechardesc7"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-caiena.jpg" alt="foto1"><img class="imgs" src="../img/foto2-caiena.jpg" alt="foto2"><img class="imgs" src="../img/foto3-caiena.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>A Guiana Francesa é um território ultramarino da França com uma rica biodiversidade, cultura diversificada e história única. Participe de festivais coloridos e visite locais históricos como a Ilha do Diabo e o Centro Espacial de Kourou.
+                Caiena é uma cidade cheia de vida e cultura, situada na costa atlântica. Com arquitetura colonial, mercados tradicionais e uma gastronomia diversificada, Caiena oferece uma combinação única de charme tropical e influências francesas. A cidade é um ponto de partida ideal para explorar a natureza exuberante e participar de eventos culturais.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Caiena</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais8">
+        <div class="cima">
+            <img src="../img/bandeira-bolivia.png" alt="bolivia"><h2>Bolívia</h2>
+            <button class="fechardesc" id="fechardesc8"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-sucre.jpg" alt="foto1"><img class="imgs" src="../img/foto2-sucre.jpg" alt="foto2"><img class="imgs" src="../img/foto3-sucre.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>A Bolívia oferece uma incrível diversidade de paisagens, desde os majestosos Andes até o Salar de Uyuni, o maior deserto de sal do mundo. Com uma rica herança cultural indígena, festivais vibrantes e uma culinária deliciosa, a Bolívia é um destino que encanta a todos.
+                Sucre, conhecida como a "Cidade Branca", é uma cidade cheia de charme e história. Com arquitetura colonial bem preservada, ruas de paralelepípedos e uma rica vida cultural, Sucre oferece uma combinação única de tranquilidade e dinamismo. 
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Sucre</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais9">
+        <div class="cima">
+            <img src="../img/bandeira-suriname.png" alt="suriname"><h2>Suriname</h2>
+            <button class="fechardesc" id="fechardesc9"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-paramarimbo.jpg" alt="foto1"><img class="imgs" src="../img/foto2-paramarimbo.jpg" alt="foto2"><img class="imgs" src="../img/foto3-paramaribo.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>A Bolívia oferece uma incrível diversidade de paisagens, desde os majestosos Andes até o Salar de Uyuni, o maior deserto de sal do mundo. Com uma rica herança cultural indígena, festivais vibrantes e uma culinária deliciosa, a Bolívia é um destino que encanta a todos.
+                Sucre, conhecida como a "Cidade Branca", é uma cidade cheia de charme e história. Com arquitetura colonial bem preservada, ruas de paralelepípedos e uma rica vida cultural, Sucre oferece uma combinação única de tranquilidade e dinamismo. 
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Parimaribo</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais10">
+        <div class="cima">
+            <img src="../img/bandeira-guiana.png" alt="guiana"><h2>Guiana</h2>
+            <button class="fechardesc" id="fechardesc10"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-george.jpg" alt="foto1"><img class="imgs" src="../img/foto2-george.jpg" alt="foto2"><img class="imgs" src="../img/foto3-george].jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Descubra a Guiana e sua capital vibrante, Georgetown! Com paisagens deslumbrantes, florestas tropicais exuberantes e uma rica biodiversidade, a Guiana é um paraíso natural. uma cidade vibrante e acolhedora. Com sua arquitetura colonial encantadora, mercados coloridos e uma cultura rica, Georgetown é uma mistura perfeita de tradição e modernidade. Caminhe pelo animado Stabroek Market, prove delícias locais nos restaurantes à beira do rio Demerara, e explore os tesouros históricos, como a majestosa Catedral de St. George.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Georgetown</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais11">
+        <div class="cima">
+            <img src="../img/bandeira-venezuela.png" alt="venezuela"><h2>Venuela</h2>
+            <button class="fechardesc" id="fechardesc11"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-caracas.jpg" alt="foto1"><img class="imgs" src="../img/foto2-caracas.jpg" alt="foto2"><img class="imgs" src="../img/foto3-caracas.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Descubra a Venezuela, um país repleto de belezas naturais e culturais! Conhecida por suas paisagens espetaculares, que vão desde as praias caribenhas até as majestosas montanhas dos Andes.
+                No coração deste país vibrante está Caracas, sua capital pulsante. Uma metrópole que mistura o tradicional e o moderno. Explore os parques exuberantes como o Parque Nacional El Ávila, onde você pode desfrutar de vistas panorâmicas da cidade e da natureza ao redor. Descubra a rica herança cultural nos museus e teatros, e saboreie a deliciosa culinária local nos mercados e restaurantes.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Caracas</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <!--pacotes-->
+
+    <aside class="pais" id="pais12">
+        <div class="cima">
+            <img src="../img/bandeira-argentina.png" alt="argentina"><h2>Argentina + Hotel</h2>
+            <button class="fechardesc" id="fechardesc12"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-herobuilding.jpg" alt="foto1"><img class="imgs" src="../img/foto2-herobuilding.jpg" alt="foto2"><img class="imgs" src="../img/foto3-herobuilding.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Aproveite uma incrível viagem para a Argentina com estadia inclusiva no Eurobuilding Hotel Boutique Buenos Aires! Hotel Confortável: Quartos modernos com hidromassagem, Wi-Fi gratuito, academia e vista panorâmica.
+             </p>
+               <p> O hotel está localizado na Calle Lima 187, Monserrat, Buenos Aires, Argentina. Quanto aos preços, o hotel oferece uma variedade de opções para atender diferentes necessidades e orçamentos. Os preços podem variar dependendo da temporada e da disponibilidade, mas geralmente os quartos começam em torno de R$588,00 por noite, <span>e receba 10% de desconto!</span> 
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Buenos Aires</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date"> 
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais13">
+        <div class="cima">
+            <img src="../img/bandeira-peru.png" alt="peru"><h2>Peru + Hotel</h2>
+            <button class="fechardesc" id="fechardesc13"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-sheraton.jpg" alt="foto1"><img class="imgs" src="../img/foto2-sheraton.jpg" alt="foto2"><img class="imgs" src="../img/foto3-sheraton.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Aproveite uma incrível viagem ao Peru com estadia inclusiva no Sheraton Lima Historic Center, com quartos amplos com vista da cidade, varandas privativas, piscina ao ar livre, academia, Wi-Fi gratuito e estacionamento gratuito. Situado no coração do centro histórico de Lima, a apenas 30 minutos de carro do Aeroporto Internacional Jorge Chavez.
+             </p>
+               <p> Não perca essa oportunidade única! O hotel oferece uma variedade de opções, mas geralmente giram em torno de R$500,00 por noite. Agende sua passagem e aproveite essa experiência com um <span>desconto especial de 10%!</span>
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Lima</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais14">
+        <div class="cima">
+            <img src="../img/bandeira-chile.png" alt="chile"><h2>Chile + Hotel</h2>
+            <button class="fechardesc" id="fechardesc14"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-magnolia.jpg" alt="foto1"><img class="imgs" src="../img/foto2-magnolia.jpg" alt="foto2"><img class="imgs" src="../img/foto3-magnolia.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Aproveite uma incrível viagem ao Chile com estadia inclusiva no Hotel Magnolia Santiago, com quartos elegantes e confortáveis, localização excelente no coração de Santiago, no bairro Lastarria, Wi-Fi gratuito, café da manhã e mais.
+             </p>
+               <p> Não perca essa oportunidade única! O hotel oferece uma variedade de opções, mas geralmente giram em torno de R$2412,00 por noite. Agende sua passagem e aproveite essa experiência com um <span>desconto especial de 10%!</span>
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Santiago</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais15">
+        <div class="cima">
+            <img src="../img/bandeira-uruguai.png" alt="uruguai"><h2>Uruguai + Hotel</h2>
+            <button class="fechardesc" id="fechardesc15"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-radisson.jpg" alt="foto1"><img class="imgs" src="../img/foto2-radisson.webp" alt="foto2"><img class="imgs" src="../img/foto3-radisson.webp" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Desfrute de uma experiência única em Montevidéu com hospedagem no Radisson Montevideo Victoria Plaza Hotel!, com quartos luxuosos e confortáveis, perto de atrações turísticas como a Plaza Independencia e o Mercado del Puerto, Wi-Fi gratuito, café da manhã e mais.
+             </p>
+               <p> Não perca essa oportunidade única! O hotel oferece uma variedade de opções, mas geralmente giram em torno de R$924,00 por noite. Agende sua passagem e aproveite essa experiência com um <span>desconto especial de 10%!</span>
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Montevidéu</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais16">
+        <div class="cima">
+            <img src="../img/bandeira-bolivia.png" alt="bolivia"><h2>Bolívia + Hotel</h2>
+            <button class="fechardesc" id="fechardesc16"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-laculta.avif" alt="foto1"><img class="imgs" src="../img/foto2-laculta.webp" alt="foto2"><img class="imgs" src="../img/foto3-laculta.avif" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Desfrute de uma experiência única em Sucre com hospedagem no La Culta, Centro Cultural!, com ambiente cultural e acolhedor, perto de atrações turísticas como a Plaza 25 de Mayo e a Casa de la Libertad, localização privilegiada no bairro La Castellana, Wi-Fi gratuito, café da manhã e mais.
+             </p>
+               <p> Não perca essa oportunidade única! O hotel oferece uma variedade de opções, mas geralmente giram em torno de R$194,00 por noite. Agende sua passagem e aproveite essa experiência com um <span>desconto especial de 10%!</span>
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Sucre</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais17">
+        <div class="cima">
+            <img src="../img/bandeira-venezuela.png" alt="venezuela"><h2>Venezuela + Hotel</h2>
+            <button class="fechardesc" id="fechardesc17"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-cayenas.avif" alt="foto1"><img class="imgs" src="../img/foto2-cayenas.avif" alt="foto2"><img class="imgs" src="../img/foto3-cayena.avif" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Desfrute de uma experiência única em Caracas com hospedagem no Hotel Cayena Caracas!, com quartos elegantes e confortáveis, perto de atrações turísticas como Centro Comercial Centro San Ignacio e o Campo de Golfe Country Club, Wi-Fi gratuito, café da manhã e mais.
+             </p>
+               <p> Não perca essa oportunidade única! O hotel oferece uma variedade de opções, mas geralmente giram em torno de R$2723,00 por noite. Agende sua passagem e aproveite essa experiência com um <span>desconto especial de 10%!</span>
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Caracas</p></h3> <br>
+            <div class="data">
+                <label for="dia"><h3>Dia:</h3></label><input type="date">
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            </div><br>
+             <h3 >Valor: </h3>
+        <div class="comprar">
+            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+        </div>
+    </aside>
 
 
-    </main><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!--rodapé-->
 
     <aside id="janelaCar" class="janelaCar" > 
         <div id="superior">
@@ -39,9 +658,22 @@
         <ul id="itens-carrinho"></ul> 
         <button id="botaoFinalizar">Finalizar Compra</button> 
     </aside>
+    <aside id="sobrenos">
+        <div id= "sup">
+            <h3>Sobre nós</h3>
+            <button id="fecharsobre"> X </button>
+        </div><br>
+        <div id="empresa">
+            <p class="emp">A American Miles é um projeto desenvolvido para facilitar a locomoção entre os países da América do Sul. Com um design funcional, a plataforma permite que os usuários busquem, comparem e reservem passagens aéreas de forma rápida e prática, promovendo a conexão entre diferentes culturas e destinos.</p> 
+            <p class="emp">A identidade visual da American Miles é representada por uma arara azul, que simboliza a diversidade da fauna sul-americana e reflete o compromisso da empresa com a natureza. O mascote também evoca a liberdade que cada viagem proporciona, lembrando que cada jornada é uma oportunidade para criar novas memórias.</p> 
+            <p class="emp">Seja para uma escapada de fim de semana ou uma longa aventura, a American Miles oferece uma ferramenta eficaz para explorar a riqueza da América do Sul.</p>
+
+        </div>
+    </aside>
 
     <footer id="rodapé">
         <div id="conteudoRoda">
+           
         <button id="botao1">Sobre nós ⇩</button>
         <a href="https://pin.it/7yxmng0dQ" id="botao3">Pinterest</a>
         <p> <b>Contato</b> <br><br>

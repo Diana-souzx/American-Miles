@@ -22,6 +22,7 @@ body{
     background-color: #1e4e8d;
     border: 0px;
     color: white;
+    cursor: pointer;
 }
 #botao3{
     color: rgb(250, 3, 3);
@@ -40,7 +41,7 @@ body{
     border: 0px;
     cursor: pointer;
     position: absolute;
-    top: 5%;
+    top: 6%;
     left: 90%;
 }
 #conteudo,#cabeçalho,#rodapé{
@@ -48,6 +49,7 @@ body{
 }
 #conteudo{
     flex: 1;
+    height: 250px;
 }
 #logo{
     width: 90px;
@@ -114,11 +116,6 @@ body{
     color: black;
     
 }
-.levar-carrinho{
-    background-color: white;
-    border: 0;
-    cursor: pointer;
-}
 .nome-pais{
     display: flex;
     align-items: center;
@@ -134,4 +131,242 @@ body{
     border: 0;
     cursor: pointer;
 }
+#imagemPerfil{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/perfil.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#sobrenos{
+   position: fixed;
+   left: 0;
+    bottom: 0;
+    width: 500px; 
+    height: 280px; 
+    background-color: white;
+    border-left: 1px solid white; 
+    padding: 20px; 
+    transition: right 0.3s;
+    display: none;
+    color: black;
+    border-radius: 20px;
+}
+#sobrenos.open{
+    display: block;
+}
+#botao1.open{
+    left:0;
+}
+.emp{
+    text-indent: 20px;
+    text-align: justify;
+}
+#sup{
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    color: #1B375C;
+}
+#fecharsobre{
+    background-color: rgb(133, 170, 255);
+    border-color: rgb(133, 170, 255);
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+#fecharsobre:hover{
+    background-color: #a1bcdf;
+    border-color:#a1bcdf ;
+}
+.pais{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px; 
+    height: 550px; 
+    background-color: white;
+    border-left: 1px solid white; 
+    padding: 20px; 
+    transition: right 0.3s;
+    display: none;
+    color: black;
+    border-radius: 20px;
+}
+.pais.open{
+    display: block;
+}
+.descrição.open{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.cima{
+    display: flex;
+    align-items: center;
+    gap: 160px;
+}
+.imgs{
+    width: 165px;
+    height: 165px;
+}
+.fala{
+    text-align: justify;
+    text-indent: 20px;
+}
+.destin{
+    color: #1B375C;
+}
+.des{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.fechardesc{
+    background-color:rgb(133, 170, 255) ;
+    border-color: rgb(133, 170, 255);
+    border-radius: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.fechardesc:hover{
+    background-color: #a1bcdf;
+    border-color: #a1bcdf;
+}
+.buttoncompra{
+    background-color:#1E4E8D ;
+    border-radius: 20px;
+    border-color: #1E4E8D ;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    margin-left: 340px;
+    color: white;
+}
+.buttoncompra:hover{
+    background-color:rgb(70, 112, 201) ;
+}
+#argentina{
+    width: 135px;
+}
+#peru{
+    left: 207px;
+    width: 135px;;
+}
+#paraguai{
+    left: 395px;
+    width: 135px;
+}
+#chile{
+    left: 580px;
+    width: 135px;
+}
+#equador{
+    left: 765px;
+    width: 135px;
+}
+#colombia{
+    left: 954px;
+    width: 135px;
+}
+#uruguai{
+    top: 330px;
+    width: 135px;
+}
+#guianaFrancesa{
+    width: 135px;
+    top: 330px;
+    left: 207px;
+    height: 80px;
+}
+#bolivia{
+    width: 135px;
+    top: 330px;
+    left: 395px;
+}
+#suriname{
+    top: 330px;
+    width: 135px;
+    left:580px ;
+}
+#guiana{
+    top: 330px;
+    width: 135px;
+    left: 765px;
+}
+#venezuela{
+    top: 330px;
+    width: 135px;
+    left: 954px;
+}
 
+#pac{
+    top: 460px;
+    position: absolute;
+}
+#argpac{
+    top: 500px;
+    width: 135px;
+}
+#perupac{
+    top: 500px;
+    width: 135px;
+    left: 207px;
+}
+#chilepac{
+    top: 500px;
+    width: 135px;
+    left: 395px ;
+}
+#urupac{
+    top: 500px;
+    width: 135px;
+    left: 580px;
+}
+#bolipac{
+    top: 500px;
+    width: 135px;
+    left: 765px;
+}
+#venepac{
+    top: 500px;
+    width: 135px;
+    left: 954px;
+}
+
+
+span{
+    background-color:#a1bcdf;
+}
+
+#nat{
+    width: 200px;
+    height: 200px;
+}
+#natura{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    border: 0;
+}
+#eud{
+    width: 200px;
+    height: 300px;
+}
+#eudora{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    border: 0;
+    top: 410px;
+}
+.data{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}

@@ -1,0 +1,55 @@
+body{
+    background-image: url(../img/imgfundo.jpeg);
+    display: flex;
+    justify-content: center;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    font-family: Arial, sans-serif; 
+}
+#conteiner{
+    padding: 55px;
+    background-color: white;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 200px;
+     height: 300px;
+
+}
+#botao{
+    margin-left: 22px;
+    position: absolute;
+}
+button{   
+    background-color:#1E4E8D ;
+    cursor: pointer;
+    border-radius: 30px;
+    border-color: #1E4E8D;
+    width: 150px;
+    height: 40px;
+    
+}
+button:hover{
+    background-color: rgb(70, 112, 201);
+    border-color:rgb(70, 112, 201) ;
+    width: 150px;
+}
+#password,#email{
+    border-radius: 30px;
+    height: 30px;
+    width: 190px;
+    border: 1px solid #ccc;
+}
+#titulo{
+    display: flex;
+    justify-content: center;
+}
+#logo{
+    display: flex;
+    justify-content: center;
+}
