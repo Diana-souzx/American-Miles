@@ -1,6 +1,8 @@
 document.getElementById('formulario').addEventListener('submit', function(event){
     event.preventDefault();
 
+    
+
     const foto = document.getElementById('foto'); 
     const imagemPerfil = document.getElementById('imagemPerfil');
 
@@ -14,6 +16,7 @@ document.getElementById('formulario').addEventListener('submit', function(event)
     }
     
 });
+
 
 
 

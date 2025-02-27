@@ -48,8 +48,9 @@ function updateDynamicFields(method) {
     } else if (method === 'pix') {
         dynamicFields.innerHTML = `
             <h3>Pagamento via Pix</h3>
-            <p>Use o QR Code abaixo para concluir o pagamento:</p>
-            <img src="/img/qrcode.jpeg" alt="QR Code Pix" style="width: 150px; height: 150px; margin: 10px 0;">
+            <p>Use a chave pix abaixo para concluir o pagamento:</p>
+            <p>74-981462022<p>
         `;
+       
     }
 }

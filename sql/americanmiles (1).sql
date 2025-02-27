@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 27/02/2025 às 11:13
+-- Tempo de geração: 27/02/2025 às 20:23
 -- Versão do servidor: 8.0.41
 -- Versão do PHP: 8.2.18
 
@@ -37,8 +37,12 @@ CREATE TABLE IF NOT EXISTS `carrinho` (
   `id_usuário` int NOT NULL,
   `qtdDias` int DEFAULT NULL,
   `nome_hotel` varchar(60) DEFAULT NULL,
+  `id_passagem` int NOT NULL,
+  `id_pacote` int NOT NULL,
   PRIMARY KEY (`id_carrinho`),
-  KEY `id_usuário` (`id_usuário`)
+  KEY `id_usuário` (`id_usuário`),
+  KEY `id_passagem` (`id_passagem`),
+  KEY `id_pacote` (`id_pacote`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -74,14 +78,16 @@ CREATE TABLE IF NOT EXISTS `cliente` (
   PRIMARY KEY (`id_usuário`),
   UNIQUE KEY `senha` (`senha`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `cliente`
 --
 
 INSERT INTO `cliente` (`id_usuário`, `nome`, `senha`, `email`, `foto`) VALUES
-(3, 'Diana de Jesus Souza', 12345, 'dianasouza.0798@gmail.com', NULL);
+(3, 'Diana de Jesus Souza', 12345, 'dianasouza.0798@gmail.com', NULL),
+(4, 'Ana Isabele ', 1234567, 'anaisabelemouramelo@gmail.com', NULL),
+(6, 'Alessa', 212121, 'alessaoliveira@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -99,6 +105,66 @@ CREATE TABLE IF NOT EXISTS `compra` (
   PRIMARY KEY (`id_compra`),
   KEY `id_carrinho` (`id_carrinho`),
   KEY `idUsuário` (`id_usuário`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `hotel`
+--
+
+DROP TABLE IF EXISTS `hotel`;
+CREATE TABLE IF NOT EXISTS `hotel` (
+  `id_hotel` int NOT NULL AUTO_INCREMENT,
+  `nome_hotel` varchar(60) NOT NULL,
+  `endereço` varchar(70) NOT NULL,
+  `valor_diária` float NOT NULL,
+  PRIMARY KEY (`id_hotel`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Despejando dados para a tabela `hotel`
+--
+
+INSERT INTO `hotel` (`id_hotel`, `nome_hotel`, `endereço`, `valor_diária`) VALUES
+(1, 'Eurobuilding Hotel Boutique Buenos Aires', 'Calle Lima 187, Monserrat, Buenos Aires, Argentina', 588),
+(2, 'Sheraton Lima Historic Center', 'Paseo de la República 170, Lima 1', 500),
+(3, 'Hotel Magnolia Santiago', 'Paseo Huerfanos 539 8320150 Santiago', 2214),
+(4, 'Radisson Montevideo Victoria Plaza Hotel', 'Pza. Independencia 759, Montevidéu 11100', 924),
+(5, ' La Culta, Centro Cultural', 'Calle Beni 31, Sucre 0059', 194),
+(6, ' Hotel Cayena Caracas', 'Av. Don Eugenio Mendoza, La Castellana, Caracas 1060', 2723);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `pacote`
+--
+
+DROP TABLE IF EXISTS `pacote`;
+CREATE TABLE IF NOT EXISTS `pacote` (
+  `id_pacote` int NOT NULL AUTO_INCREMENT,
+  `nome_pais` varchar(45) NOT NULL,
+  `valor_pacote` float DEFAULT NULL,
+  `dataIda` date DEFAULT NULL,
+  `qtdDias` int NOT NULL,
+  `id_hotel` int NOT NULL,
+  PRIMARY KEY (`id_pacote`),
+  KEY `id_hotel` (`id_hotel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `passagem`
+--
+
+DROP TABLE IF EXISTS `passagem`;
+CREATE TABLE IF NOT EXISTS `passagem` (
+  `id_passagem` int NOT NULL AUTO_INCREMENT,
+  `nome_pais` varchar(45) NOT NULL,
+  `valor_passagem` float DEFAULT NULL,
+  `dataIda` date DEFAULT NULL,
+  PRIMARY KEY (`id_passagem`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -124,6 +190,8 @@ CREATE TABLE IF NOT EXISTS `pix` (
 -- Restrições para tabelas `carrinho`
 --
 ALTER TABLE `carrinho`
+  ADD CONSTRAINT `carrinho_ibfk_1` FOREIGN KEY (`id_passagem`) REFERENCES `passagem` (`id_passagem`),
+  ADD CONSTRAINT `carrinho_ibfk_2` FOREIGN KEY (`id_pacote`) REFERENCES `pacote` (`id_pacote`),
   ADD CONSTRAINT `id_usuário` FOREIGN KEY (`id_usuário`) REFERENCES `cliente` (`id_usuário`);
 
 --
@@ -137,6 +205,12 @@ ALTER TABLE `cartão_crédito`
 --
 ALTER TABLE `compra`
   ADD CONSTRAINT `idUsuário` FOREIGN KEY (`id_usuário`) REFERENCES `cliente` (`id_usuário`);
+
+--
+-- Restrições para tabelas `pacote`
+--
+ALTER TABLE `pacote`
+  ADD CONSTRAINT `pacote_ibfk_1` FOREIGN KEY (`id_hotel`) REFERENCES `hotel` (`id_hotel`);
 
 --
 -- Restrições para tabelas `pix`

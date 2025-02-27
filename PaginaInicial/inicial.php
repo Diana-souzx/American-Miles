@@ -214,8 +214,9 @@
     <?php
     $preço = '';
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date']) && !empty($_POST['date'])) {
-        $Inputdata = $_POST['date'];
-        if ($Inputdata) {
+        $Inputdata1 = $_POST['date'];
+        
+        if ($Inputdata1) {
             $preçoMin = 1400;
             $preçoMax = 3000;
             $preço = rand($preçoMin, $preçoMax);
@@ -525,7 +526,7 @@
              <h3 id="valor">Valor: <?php echo !empty($preço) ? "R$ $preço,00" : ''; ?></h3>
         </div>
         <div class="comprar">
-            <button class="buttoncompra">Comprar</button>
+            <button class="buttoncompra" id="buttoncompra">Comprar</button>
         </div>
     </aside>
 

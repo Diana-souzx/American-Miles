@@ -1,4 +1,4 @@
-body, html {
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
@@ -6,13 +6,14 @@ body, html {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(/img/imgfundo.jpeg);
+    background-image: url(../img/imgfundo.jpeg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     width: 100%;
     flex-direction: column;
+    
 }
 
 .logo {
@@ -58,14 +59,14 @@ form input {
 
 .payment-options {
     display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    gap: 10px; /* Reduz a distância entre os botões */
-    margin-top: 10px; /* Pequeno espaço acima */
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px; 
 }
 
 .payment-btn {
-    flex: 1; /* Ajusta o tamanho dos botões para ficarem proporcionais */
-    max-width: 200px; /* Limita a largura máxima dos botões */
+    flex: 1; 
+    max-width: 200px; 
     padding: 10px;
     background-color: #ddd;
     border: none;
