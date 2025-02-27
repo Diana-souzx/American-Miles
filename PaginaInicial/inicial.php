@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="inicial.css">
 </head>
 <body>
+    <?php  include('../bdconfig/config.php'); 
+    ?>
     <header id="cabeçalho">
         <img id="logo" src="../img/logoAm.png" alt="Logo">
         <div id="botoes">
 
-            <button id="perfil"><img id="imagemPerfil" src="../img/perfil.png" alt="" ></button>
+            <button id="perfil"><img id="imagemPerfil" src="default-profile.png" alt="" ></button>
+            
             <button id="carrinho"><img src="../img/carrinho.png" alt="Carrinho" style="width: 40px; height: 40px;"></button>
         </div>
     </header>
@@ -128,6 +131,15 @@
                 </div>
             </div>
 
+            <div id="brasil" class="países">
+                <div class="nome-pais">
+                    <img src="../img/bandeira-brasil.png" alt="vanezuela"><h4>Brasil</h4>
+                </div>
+                <div class="submit">
+                    <button class="descrição" id="descrição18"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
+                </div>
+            </div>
+
             <!--pacotes-->
 
             <div id="argpac" class="países">
@@ -177,7 +189,7 @@
 
             <div id="venepac" class="países">
                 <div class="nome-pais">
-                    <img src="../img/bandeira-venezuela.png" alt="peru"><h4>Bolívia + Hotel</h4>
+                    <img src="../img/bandeira-venezuela.png" alt="peru"><h4>Venezuela + Hotel</h4>
                 </div>
                 <div class="submit">
                     <button class="descrição" id="descrição17"><img src="../img/três pontos.png" alt="..." style="width: 30px; height: 30px;"></button>
@@ -191,12 +203,305 @@
 
             <button id="eudora"><img id="eud" src="../img/eudora.webp" alt="eudora"></button>
 
+            <button id="jequiti"><img id="jeq" src="../img/anuncio-jequiti.jpg" alt="jequiti"></button>
+
         </div>
         <h1 id="pac">Pacotes </h1>
 
     </main><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br>
 
     <!--aside paises-->
+    <?php
+    $preço = '';
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date']) && !empty($_POST['date'])) {
+        $Inputdata = $_POST['date'];
+        if ($Inputdata) {
+            $preçoMin = 1400;
+            $preçoMax = 3000;
+            $preço = rand($preçoMin, $preçoMax);
+        }
+    }
+
+    $preço1 = '';
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date1']) && !empty($_POST['date1'])) {
+        $Inputdata = $_POST['date1'];
+        if ($Inputdata) {
+            $preçoMin = 1400;
+            $preçoMax = 3000;
+            $preço1 = rand($preçoMin, $preçoMax);
+        }
+    }
+  ?>
+
+<!--pacotes php -->
+    <?php
+       $preçoPassagem = 0;
+       $preçoTotal = 0;
+       $preçoDiária = 588; 
+       $desconto = 0.10;
+       
+       if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date12']) && isset($_POST['dias']) && !empty($_POST['date12']) && !empty($_POST['dias'])) {
+           $Inputdata = $_POST['date12'];
+           $dias = $_POST['dias'];
+
+           if(!isset($conect)){
+            die("erro: Conexão com o banco de dados não encontrada!" . $conect->connect_error);
+          }
+       
+           $conect->select_db($bd_name);
+       
+           $tipo_passagem = 'Pacote'; 
+           $nome_hotel = 'Eurobuilding Hotel Boutique Buenos Aires';
+           $nome_pais = "Argentina";
+       
+       
+           if ($Inputdata && $dias > 0) {
+               
+               $dataFormatada = DateTime::createFromFormat('Y-m-d', $Inputdata);
+               if ($dataFormatada && $dataFormatada->format('Y-m-d') === $Inputdata) {
+                $dataParaInsercao = $dataFormatada->format('Y-m-d');
+                   $preçoMin = 1400;
+                   $preçoMax = 3000;
+                   $preçoPassagem = rand($preçoMin, $preçoMax);
+                          
+                   $preçoTotalSemDesconto = ($preçoDiária * $dias) + $preçoPassagem;
+                         
+                   $preçoTotal = $preçoTotalSemDesconto * (1 - $desconto);
+            
+                   $preçoTotal = (float) $preçoTotal;
+       
+                   $stmt = $conect->prepare("INSERT INTO carrinho (nome_país, tipo_passagem, valor_passagem, dataIda, qtdDias, nome_hotel) VALUES (?, ?, ?, ?, ?, ?);");
+       
+                       
+                    $stmt->bind_param("ssdsis", $nome_pais, $tipo_passagem, $preçoTotal, $dataParaInsercao, $dias, $nome_hotel);
+       
+                       
+                       
+               } 
+       }}
+       
+        
+
+        $preçoPassagem = 0;
+        $preçoTotal1 = 0;
+        $preçoDiária = 500; 
+        $desconto = 0.10;
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date13']) && isset($_POST['dias1']) && !empty($_POST['date13']) && !empty($_POST['dias1'])) {
+            $Inputdata = $_POST['date13'];
+            $dias = $_POST['dias1'];
+            if(!isset($conect)){
+                die("erro: Conexão com o banco de dados não encontrada!" . $conect->connect_error);
+              }
+           
+               $conect->select_db($bd_name);
+           
+               $tipo_passagem = 'Pacote'; 
+               $nome_hotel1 = 'Sheraton Lima Historic Center';
+               $nome_pais1 = "Peru";
+    
+            if ($Inputdata && $dias > 0) {
+                
+                $dataFormatada = DateTime::createFromFormat('Y-m-d', $Inputdata);
+                if ($dataFormatada && $dataFormatada->format('Y-m-d') === $Inputdata) {
+                 $dataParaInsercao1 = $dataFormatada->format('Y-m-d');
+                    $preçoMin = 1400;
+                    $preçoMax = 3000;
+                    $preçoPassagem = rand($preçoMin, $preçoMax);
+                           
+                    $preçoTotalSemDesconto = ($preçoDiária * $dias) + $preçoPassagem;
+                          
+                    $preçoTotal1 = $preçoTotalSemDesconto * (1 - $desconto);
+             
+                    $preçoTotal1 = (float) $preçoTotal1;
+        
+                    $stmt = $conect->prepare("INSERT INTO carrinho (nome_país, tipo_passagem, valor_passagem, dataIda, qtdDias, nome_hotel) VALUES (?, ?, ?, ?, ?, ?);");
+        
+                        
+                     $stmt->bind_param("ssdsis", $nome_pais, $tipo_passagem, $preçoTotal1, $dataParaInsercao1, $dias, $nome_hotel);
+        
+                        
+                        
+                } 
+        }}
+
+        $preçoPassagem = 0;
+        $preçoTotal2 = 0;
+        $preçoDiária = 2412; 
+        $desconto = 0.10;
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date14']) && isset($_POST['dias2']) && !empty($_POST['date14']) && !empty($_POST['dias2'])) {
+            $Inputdata = $_POST['date14'];
+            $dias = $_POST['dias2'];
+
+            if(!isset($conect)){
+                die("erro: Conexão com o banco de dados não encontrada!" . $conect->connect_error);
+              }
+           
+               $conect->select_db($bd_name);
+           
+               $tipo_passagem = 'Pacote'; 
+               $nome_hotel2 = 'Hotel Magnolia Santiago';
+               $nome_pais2 = "Chile";
+    
+            if ($Inputdata && $dias > 0) {
+                
+                $dataFormatada = DateTime::createFromFormat('Y-m-d', $Inputdata);
+                if ($dataFormatada && $dataFormatada->format('Y-m-d') === $Inputdata) {
+                 $dataParaInsercao2 = $dataFormatada->format('Y-m-d');
+                    $preçoMin = 1400;
+                    $preçoMax = 3000;
+                    $preçoPassagem = rand($preçoMin, $preçoMax);
+                           
+                    $preçoTotalSemDesconto = ($preçoDiária * $dias) + $preçoPassagem;
+                          
+                    $preçoTotal2 = $preçoTotalSemDesconto * (1 - $desconto);
+             
+                    $preçoTotal2 = (float) $preçoTotal2;
+        
+                    $stmt = $conect->prepare("INSERT INTO carrinho (nome_país, tipo_passagem, valor_passagem, dataIda, qtdDias, nome_hotel) VALUES (?, ?, ?, ?, ?, ?);");
+        
+                        
+                     $stmt->bind_param("ssdsis", $nome_pais, $tipo_passagem, $preçoTotal2, $dataParaInsercao2, $dias, $nome_hotel);
+        
+                        
+                        
+                } 
+        }}
+
+        $preçoPassagem = 0;
+        $preçoTotal3 = 0;
+        $preçoDiária = 924; 
+        $desconto = 0.10;
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date15']) && isset($_POST['dias3']) && !empty($_POST['date15']) && !empty($_POST['dias3'])) {
+            $Inputdata = $_POST['date15'];
+            $dias = $_POST['dias3'];
+
+            if(!isset($conect)){
+                die("erro: Conexão com o banco de dados não encontrada!" . $conect->connect_error);
+              }
+           
+               $conect->select_db($bd_name);
+           
+               $tipo_passagem = 'Pacote'; 
+               $nome_hotel3 = 'Radisson Montevideo Victoria Plaza Hotel';
+               $nome_pais3 = "Uruguai";
+    
+            if ($Inputdata && $dias > 0) {
+                
+                $dataFormatada = DateTime::createFromFormat('Y-m-d', $Inputdata);
+                if ($dataFormatada && $dataFormatada->format('Y-m-d') === $Inputdata) {
+                 $dataParaInsercao3 = $dataFormatada->format('Y-m-d');
+                    $preçoMin = 1400;
+                    $preçoMax = 3000;
+                    $preçoPassagem = rand($preçoMin, $preçoMax);
+                           
+                    $preçoTotalSemDesconto = ($preçoDiária * $dias) + $preçoPassagem;
+                          
+                    $preçoTotal3 = $preçoTotalSemDesconto * (1 - $desconto);
+             
+                    $preçoTotal3 = (float) $preçoTotal3;
+        
+                    $stmt = $conect->prepare("INSERT INTO carrinho (nome_país, tipo_passagem, valor_passagem, dataIda, qtdDias, nome_hotel) VALUES (?, ?, ?, ?, ?, ?);");
+        
+                        
+                     $stmt->bind_param("ssdsis", $nome_pais, $tipo_passagem, $preçoTotal3, $dataParaInsercao3, $dias, $nome_hotel);
+        
+                        
+                        
+                } 
+        }}
+
+        $preçoPassagem = 0;
+        $preçoTotal4 = 0;
+        $preçoDiária = 194; 
+        $desconto = 0.10;
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date16']) && isset($_POST['dias4']) && !empty($_POST['date16']) && !empty($_POST['dias4'])) {
+            $Inputdata = $_POST['date16'];
+            $dias = $_POST['dias4'];
+
+            if(!isset($conect)){
+                die("erro: Conexão com o banco de dados não encontrada!" . $conect->connect_error);
+              }
+           
+               $conect->select_db($bd_name);
+           
+               $tipo_passagem = 'Pacote'; 
+               $nome_hotel4 = 'La Culta, Centro Cultural';
+               $nome_pais4 = "Bolívia";
+    
+            if ($Inputdata && $dias > 0) {
+                
+                $dataFormatada = DateTime::createFromFormat('Y-m-d', $Inputdata);
+                if ($dataFormatada && $dataFormatada->format('Y-m-d') === $Inputdata) {
+                 $dataParaInsercao4 = $dataFormatada->format('Y-m-d');
+                    $preçoMin = 1400;
+                    $preçoMax = 3000;
+                    $preçoPassagem = rand($preçoMin, $preçoMax);
+                           
+                    $preçoTotalSemDesconto = ($preçoDiária * $dias) + $preçoPassagem;
+                          
+                    $preçoTotal4 = $preçoTotalSemDesconto * (1 - $desconto);
+             
+                    $preçoTotal4 = (float) $preçoTotal4;
+        
+                    $stmt = $conect->prepare("INSERT INTO carrinho (nome_país, tipo_passagem, valor_passagem, dataIda, qtdDias, nome_hotel) VALUES (?, ?, ?, ?, ?, ?);");
+        
+                        
+                     $stmt->bind_param("ssdsis", $nome_pais, $tipo_passagem, $preçoTotal4, $dataParaInsercao4, $dias, $nome_hotel);
+        
+                        
+                        
+                } 
+        }}
+
+        $preçoPassagem = 0;
+        $preçoTotal5 = 0;
+        $preçoDiária = 2723; 
+        $desconto = 0.10;
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date17']) && isset($_POST['dias5']) && !empty($_POST['date17']) && !empty($_POST['dias5'])) {
+            $Inputdata = $_POST['date17'];
+            $dias = $_POST['dias5'];
+
+            if(!isset($conect)){
+                die("erro: Conexão com o banco de dados não encontrada!" . $conect->connect_error);
+              }
+           
+               $conect->select_db($bd_name);
+           
+               $tipo_passagem = 'Pacote'; 
+               $nome_hotel5 = 'Hotel Cayena Caracas';
+               $nome_pais5 = "Venezuela";
+    
+            if ($Inputdata && $dias > 0) {
+                
+                $dataFormatada = DateTime::createFromFormat('Y-m-d', $Inputdata);
+                if ($dataFormatada && $dataFormatada->format('Y-m-d') === $Inputdata) {
+                 $dataParaInsercao5 = $dataFormatada->format('Y-m-d');
+                    $preçoMin = 1400;
+                    $preçoMax = 3000;
+                    $preçoPassagem = rand($preçoMin, $preçoMax);
+                           
+                    $preçoTotalSemDesconto = ($preçoDiária * $dias) + $preçoPassagem;
+                          
+                    $preçoTotal5 = $preçoTotalSemDesconto * (1 - $desconto);
+             
+                    $preçoTotal5 = (float) $preçoTotal1;
+        
+                    $stmt = $conect->prepare("INSERT INTO carrinho (nome_país, tipo_passagem, valor_passagem, dataIda, qtdDias, nome_hotel) VALUES (?, ?, ?, ?, ?, ?);");
+        
+                        
+                     $stmt->bind_param("ssdsis", $nome_pais, $tipo_passagem, $preçoTotal5, $dataParaInsercao5, $dias, $nome_hotel);
+        
+                        
+                        
+                } 
+        }}
+    ?>
+
     <aside class="pais" id="pais">
         <div class="cima">
             <img src="../img/bandeira-argentina.png" alt="Argentina"><h2>Argentina</h2>
@@ -209,11 +514,15 @@
             <p>Argentina é um país diversificado e encantador localizado na América do Sul, conhecido por suas vastas paisagens que vão das geleiras da Patagônia aos vinhedos de Mendoza e às florestas de Misiones. Buenos Aires, sua capital, é o centro cultural, oferecendo uma combinação de elegância europeia e paixão latina. A cultura argentina é vibrante, com destaque para o tango, a gastronomia (especialmente vinhos e carnes), e a paixão nacional pelo futebol.</p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Buenos Aires</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Buenos Aires</p></h3></div> <br> 
+            
+                <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date" id="date" value="<?php echo isset($_POST['date']) ? $_POST['date'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+                <br>
+             <h3 id="valor">Valor: <?php echo !empty($preço) ? "R$ $preço,00" : ''; ?></h3>
         </div>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
@@ -234,11 +543,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Lima</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Lima</p></h3></div> <br>
+    
+                <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date1" id="date1" value="<?php echo isset($_POST['date1']) ? $_POST['date1'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form><br>
+        
+            <h3 id="valor1">Valor: <?php echo !empty($preço1) ? "R$ $preço1,00" : ''; ?></h3>
         </div>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
@@ -259,12 +572,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Assunção</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
-        </div>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Assunção</p></h3></div> <br>
+            
+                <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date2" id="date2" value="<?php echo isset($_POST['date2']) ? $_POST['date2'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+        <br>
+        <h3 id="valor2">Valor: <?php echo !empty($preço2) ? "R$ $preço2,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -284,12 +600,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Santiago</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
-        </div>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Santiago</p></h3></div> <br>
+            
+                <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date3" id="date3" value="<?php echo isset($_POST['date3']) ? $_POST['date3'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+        <br>
+        <h3 id="valor3">Valor: <?php echo !empty($preço3) ? "R$ $preço3,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -309,12 +628,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Quito</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
-        </div>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Quito</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date4" id="date4" value="<?php echo isset($_POST['date4']) ? $_POST['date4'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+        <br>
+        <h3 id="valor4">Valor: <?php echo !empty($preço4) ? "R$ $preço4,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -334,12 +656,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Quito</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
-        </div>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Quito</p></h3></div> <br>
+           
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date5" id="date5" value="<?php echo isset($_POST['date5']) ? $_POST['date5'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+        <br>
+        <h3 id="valor5">Valor: <?php echo !empty($preço5) ? "R$ $preço5,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -359,12 +684,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Montevidéu</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
-        
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Montevidéu</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date6" id="date6" value="<?php echo isset($_POST['date6']) ? $_POST['date6'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+            <br>
+            <h3 id="valor6">Valor: <?php echo !empty($preço6) ? "R$ $preço6,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -384,11 +712,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Caiena</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Caiena</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date7" id="date7" value="<?php echo isset($_POST['date7']) ? $_POST['date7'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+            <br>
+            <h3 id="valor7">Valor: <?php echo !empty($preço7) ? "R$ $preço7,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -408,11 +740,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Sucre</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Sucre</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date8" id="date8" value="<?php echo isset($_POST['date8']) ? $_POST['date8'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+            <br>
+            <h3 id="valor8">Valor: <?php echo !empty($preço8) ? "R$ $preço8,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -432,11 +768,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Parimaribo</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Parimaribo</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date9" id="date9" value="<?php echo isset($_POST['date9']) ? $_POST['date9'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+            <br>
+            <h3 id="valor9">Valor: <?php echo !empty($preço9) ? "R$ $preço9,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -455,11 +795,15 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Georgetown</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Georgetown</p></h3></div><br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date10" id="date10" value="<?php echo isset($_POST['date10']) ? $_POST['date10'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+            <br>
+            <h3 id="valor10">Valor: <?php echo !empty($preço10) ? "R$ $preço10,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -467,7 +811,7 @@
 
     <aside class="pais" id="pais11">
         <div class="cima">
-            <img src="../img/bandeira-venezuela.png" alt="venezuela"><h2>Venuela</h2>
+            <img src="../img/bandeira-venezuela.png" alt="venezuela"><h2>Venezuela</h2>
             <button class="fechardesc" id="fechardesc11"> X </button>
         </div><br>
         <div >
@@ -479,11 +823,42 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Caracas</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Caracas</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date11" id="date11" value="<?php echo isset($_POST['date11']) ? $_POST['date11'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+            <br>
+            <h3 id="valor11">Valor: <?php echo !empty($preço11) ? "R$ $preço11,00" : ''; ?></h3>
+        <div class="comprar">
+            <button class="buttoncompra">Comprar</button>
+        </div>
+    </aside>
+
+    <aside class="pais" id="pais18">
+        <div class="cima">
+            <img src="../img/bandeira-brasil.png" alt="brasil"><h2>Brasil</h2>
+            <button class="fechardesc" id="fechardesc18"> X </button>
+        </div><br>
+        <div >
+            <img class="imgs" src="../img/foto1-salvador.jpg" alt="foto1"><img class="imgs" src="../img/foto2-salvador.jpg" alt="foto2"><img class="imgs" src="../img/foto3-salvador.jpg" alt="foto3">
+        </div><br>
+        <div class="fala">
+            <p>Descubra o encanto do Brasil, um país vibrante e diverso que desperta a imaginação e o coração. alvador, uma cidade vibrante e rica em cultura. Com suas praias paradisíacas, gastronomia única e o Carnaval mais animado do mundo, Salvador é o destino perfeito para quem busca viver intensamente e se encantar com a beleza do Brasil.
+            </p>
+        </div><br>  
+        <div class="info" id="info">
+            <h3 class="des">Destino: <p class="destin">Salvador</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                    <label for="dia"><h3>Dia:</h3></label>
+                    <input type="date" name="date18" id="date18" value="<?php echo isset($_POST['date18']) ? $_POST['date18'] : ''; ?>">
+                    <input type="submit" value="Ver Preço" class="verpreço">
+                </form>
+            <br>
+            <h3 id="valor18">Valor: <?php echo !empty($preço18) ? "R$ $preço18,00" : ''; ?></h3>
         <div class="comprar">
             <button class="buttoncompra">Comprar</button>
         </div>
@@ -496,7 +871,7 @@
             <img src="../img/bandeira-argentina.png" alt="argentina"><h2>Argentina + Hotel</h2>
             <button class="fechardesc" id="fechardesc12"> X </button>
         </div><br>
-        <div >
+        <div>
             <img class="imgs" src="../img/foto1-herobuilding.jpg" alt="foto1"><img class="imgs" src="../img/foto2-herobuilding.jpg" alt="foto2"><img class="imgs" src="../img/foto3-herobuilding.jpg" alt="foto3">
         </div><br>
         <div class="fala">
@@ -506,14 +881,25 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Buenos Aires</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date"> 
-                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Buenos Aires</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                <label for="dia"><h3>Dia:</h3></label>
+                <input type="date" id="date12" name="date12" required> 
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> 
+                <input type="number"  id="dias" name= "dias" min="1" max="5" value="<?php echo isset($_POST['dias']) ? $_POST['dias'] : 1; ?>">
+
+                <input type="submit" value="Ver Preço" class="verpreço">
+            </form>
+            <br>
+             <h3 id="valor12">Valor: <?php 
+                if ($preçoTotal > 0) {
+                    echo "R$ " . number_format($preçoTotal, 2, ',', '.'); 
+                } 
+                ?>
+             </h3>
         <div class="comprar">
-            <button class="buttoncompra">Comprar</button>
+            <button class="buttoncompra" data-nome_pais="Argentina" data-preçoTotal="<?php echo $preçoTotal; ?>" data-tipo_passagem="Pacote" data-dataIda="<?php echo $Inputdata; ?>" data-qtdDias="<?php echo $dias; ?>" data-nome_hotel="Eurobuilding Hotel Boutique Buenos Aires">Comprar</button>
         </div>
     </aside>
 
@@ -532,14 +918,25 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Lima</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
-            </div><br>
-             <h3 >Valor: </h3>
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Lima</p></h3></div> <br>
+            
+            <form class="data" action="" method="POST">
+                <label for="dia"><h3>Dia:</h3></label>
+                <input type="date" id="date13" name="date13" required> 
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> 
+                <input type="number"  id="dias1" name= "dias1" min="1" max="5" value="<?php echo isset($_POST['dias1']) ? $_POST['dias1'] : 1; ?>">
+
+                <input type="submit" value="Ver Preço" class="verpreço">
+            </form>
+            <br>
+             <h3 id="valor13">Valor: <?php 
+                if ($preçoTotal1 > 0) {
+                    echo "R$ " . number_format($preçoTotal1, 2, ',', '.'); 
+                } 
+                ?>
+             </h3>
         <div class="comprar">
-            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+            <button class="buttoncompra" id="buttoncompra" data-nome_pais="Peru" data-preçoTotal="<?php echo $preçoTotal; ?>" data-tipo_passagem="Pacote" data-dataIda="<?php echo $Inputdata; ?>" data-qtdDias="<?php echo $dias; ?>" data-nome_hotel="Sheraton Lima Historic Center">Comprar</button>
         </div>
     </aside>
 
@@ -558,14 +955,25 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Santiago</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Santiago</p></h3></div> <br>
+        
+            <form class="data" action="" method="POST">
+                <label for="dia"><h3>Dia:</h3></label>
+                <input type="date" id="date14" name="date14" required> 
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> 
+                <input type="number"  id="dias2" name= "dias2" min="1" max="5" value="<?php echo isset($_POST['dias2']) ? $_POST['dias2'] : 1; ?>">
+
+                <input type="submit" value="Ver Preço" class="verpreço">
+            </form>
             </div><br>
-             <h3 >Valor: </h3>
+             <h3 id="valor14">Valor: <?php 
+                if ($preçoTotal2 > 0) {
+                    echo "R$ " . number_format($preçoTotal2, 2, ',', '.'); 
+                } 
+                ?>
+             </h3>
         <div class="comprar">
-            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+            <button class="buttoncompra" id="buttoncompra" data-nome_pais="Chile" data-preçoTotal="<?php echo $preçoTotal; ?>" data-tipo_passagem="Pacote" data-dataIda="<?php echo $Inputdata; ?>" data-qtdDias="<?php echo $dias; ?>" data-nome_hotel="Hotel Magnolia Santiago">Comprar</button>
         </div>
     </aside>
 
@@ -584,14 +992,24 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Montevidéu</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Montevidéu</p></h3></div> <br>
+            <form class="data" action="" method="POST">
+                <label for="dia"><h3>Dia:</h3></label>
+                <input type="date" id="date15" name="date15" required> 
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> 
+                <input type="number"  id="dias3" name= "dias3" min="1" max="5" value="<?php echo isset($_POST['dias3']) ? $_POST['dias3'] : 1; ?>">
+
+                <input type="submit" value="Ver Preço" class="verpreço">
+            </form>
             </div><br>
-             <h3 >Valor: </h3>
+             <h3 id="valor15">Valor: <?php 
+                if ($preçoTotal3 > 0) {
+                    echo "R$ " . number_format($preçoTotal3, 2, ',', '.'); 
+                } 
+                ?>
+             </h3>
         <div class="comprar">
-            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+            <button class="buttoncompra" id="buttoncompra" data-nome_pais="Uruguai" data-preçoTotal="<?php echo $preçoTotal; ?>" data-tipo_passagem="Pacote" data-dataIda="<?php echo $Inputdata; ?>" data-qtdDias="<?php echo $dias; ?>" data-nome_hotel="Radisson Montevideo Victoria Plaza Hotel">Comprar</button>
         </div>
     </aside>
 
@@ -610,14 +1028,24 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Sucre</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Sucre</p></h3></div> <br>
+            <form class="data" action="" method="POST">
+                <label for="dia"><h3>Dia:</h3></label>
+                <input type="date" id="date16" name="date16" required> 
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> 
+                <input type="number"  id="dias4" name= "dias4" min="1" max="5" value="<?php echo isset($_POST['dias4']) ? $_POST['dias4'] : 1; ?>">
+
+                <input type="submit" value="Ver Preço" class="verpreço">
+            </form>
             </div><br>
-             <h3 >Valor: </h3>
+             <h3 id="valor16">Valor: <?php 
+                if ($preçoTotal4 > 0) {
+                    echo "R$ " . number_format($preçoTotal4, 2, ',', '.'); 
+                } 
+                ?>
+             </h3>
         <div class="comprar">
-            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+            <button class="buttoncompra" id="buttoncompra" data-nome_pais="Bolívia" data-preçoTotal="<?php echo $preçoTotal; ?>" data-tipo_passagem="Pacote" data-dataIda="<?php echo $Inputdata; ?>" data-qtdDias="<?php echo $dias; ?>" data-nome_hotel="La Culta, Centro Cultural">Comprar</button>
         </div>
     </aside>
 
@@ -636,20 +1064,60 @@
             </p>
         </div><br>  
         <div class="info" id="info">
-            <h3 class="des">Destino: <p class="destin">Caracas</p></h3> <br>
-            <div class="data">
-                <label for="dia"><h3>Dia:</h3></label><input type="date">
-                <label for="diaria"><h3>Quantidade de dias: </h3></label> <input type="number" min="1" max="5">
+            <div id="chega"><h3 class="des">Partida: <p class="destin">Salvador</p></h3><h3 class="des">Destino: <p class="destin">Caracas</p></h3></div> <br>
+            <form class="data" action="" method="POST">
+                <label for="dia"><h3>Dia:</h3></label>
+                <input type="date" id="date17" name="date17" required> 
+                <label for="diaria"><h3>Quantidade de dias: </h3></label> 
+                <input type="number"  id="dias5" name= "dias5" min="1" max="5" value="<?php echo isset($_POST['dias5']) ? $_POST['dias5'] : 1; ?>">
+
+                <input type="submit" value="Ver Preço" class="verpreço">
+            </form>
             </div><br>
-             <h3 >Valor: </h3>
+             <h3 id="valor17">Valor: <?php 
+                if ($preçoTotal5 > 0) {
+                    echo "R$ " . number_format($preçoTotal5, 2, ',', '.'); 
+                } 
+                ?>
+             </h3>
         <div class="comprar">
-            <button class="buttoncompra" id="buttoncompra">Comprar</button>
+            <button class="buttoncompra" id="buttoncompra" data-nome_pais="Venezela" data-preçoTotal="<?php echo $preçoTotal; ?>" data-tipo_passagem="Pacote" data-dataIda="<?php echo $Inputdata; ?>" data-qtdDias="<?php echo $dias; ?>" data-nome_hotel="Hotel Cayena Caracas">Comprar</button>
         </div>
     </aside>
 
 
-    <!--rodapé-->
+    <!--carrinho-->
+    <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $nome_pais = isset($_POST['nome_pais']) ? $_POST['nome_pais'] : '';
+        $tipo_passagem = isset($_POST['tipo_passagem']) ? $_POST['tipo_passagem'] : ''; 
+        $preçoTotal = isset($_POST['preçoTotal']) ? $_POST['preçoTotal'] : ''; 
+        $Inputdata = isset($_POST['dataParaInsercao']) ? $_POST['dataParaInsercao'] : ''; 
+        $dias = isset($_POST['dias']) ? $_POST['dias'] : ''; 
+        $nome_hotel = isset($_POST['nome_hotel']) ? $_POST['nome_hotel'] : ''; 
 
+        $carrinho = [];
+        $sql = "SELECT nome_país, tipo_passagem, valor_passagem, dataIda, qtdDias, nome_hotel FROM carrinho";
+        $conect->select_db($bd_name);
+        $result = $conect->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $carrinho[] = [
+                    'nomePais' => $row["nome_país"],
+                    'tipoPassagem' => $row["tipo_passagem"],
+                    'preçoTotal' => $row["valor_passagem"],
+                    'dataIda' => $row["dataIda"],
+                    'qtdDias' => $row["qtdDias"],
+                    'nomeHotel' => $row["nome_hotel"]
+                ];
+            }
+        } else {
+            $carrinho = []; 
+        }}
+    ?>
+    <script>const carrinho = <?php echo json_encode($carrinho); ?>;
+    console.log(carrinho);</script>
     <aside id="janelaCar" class="janelaCar" > 
         <div id="superior">
             <h2>Carrinho de Compras</h2> 
@@ -658,6 +1126,9 @@
         <ul id="itens-carrinho"></ul> 
         <button id="botaoFinalizar">Finalizar Compra</button> 
     </aside>
+    
+<!--rodapé-->
+
     <aside id="sobrenos">
         <div id= "sup">
             <h3>Sobre nós</h3>

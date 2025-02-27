@@ -39,7 +39,7 @@ body {
     box-sizing: border-box;
   }
   
-  button {
+  #botaocadastro {
     background-color: #004AAD;
     color: white;
     padding: 12px 20px;
@@ -51,7 +51,7 @@ body {
     margin: 8px 0;
   }
   
-  button:hover {
+  #botaocadastro:hover {
     background-color: #1B375C;  }
     .info {
       text-align: center;
@@ -70,4 +70,9 @@ body {
      }
   
   
-  
+#cont{
+  padding: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

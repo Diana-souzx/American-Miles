@@ -1,4 +1,3 @@
-
 document.getElementById('formulario').addEventListener('submit', function(event){
     event.preventDefault();
 
@@ -13,4 +12,8 @@ document.getElementById('formulario').addEventListener('submit', function(event)
         } 
         reader.readAsDataURL(foto.files[0]); 
     }
+    
 });
+
+
+

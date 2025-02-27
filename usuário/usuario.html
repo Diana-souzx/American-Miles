@@ -13,19 +13,24 @@
         </div>
         <div id="usuario">
         <h1 id="titulo">Perfil</h1><br>
-        <form id="formulario" action="usuário.php">
+        <form id="formulario" action="usuário.php" method="post">
             <label for="foto"><b>Foto de perfil: </b></label><br>
-            <input type="file" id="foto" accept="image/*"><br><br>
+            <input type="file" id="foto" name="foto" accept="image/*"><br><br>
 
-            <label for="nome"><b>Nome de usuário</b></label><br>
-            <input type="text" id="nomeusu" required>
-            </div><br>
+            <label for="email"><b>Seu e-mail</b></label><br>
+            <input type="email" id="email" name="email" required placeholder="exemplo@gmail.com"
+            style="border: 1px solid #ccc;
+            border-radius: 20px;
+            height: 30px;
+            width: 300px;">
+        </div><br>
             
             <div id="button">
-                <button type="submit" id="botao">Confirmar</button>
+                <input type="submit" id="botao" value= "Confirmar">
             </div>
         </form>
     </div>
 </body>
 <script src="./usu.js"></script>
+<script src="../PaginaInicial/inicial.js"></script>
 </html>

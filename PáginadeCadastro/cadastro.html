@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Agência de Viagens - Página de Cadastro">
-    <link rel= "stylesheet" href="../Página de Cadastro/cadastro.css">
+    <link rel= "stylesheet" href="../PáginadeCadastro/cadastro.css">
     <title>Cadastro</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
         
         <h2 id="titulo">CADASTRO</h2>
         
-        <form action="../usuário/usuário.php" method="POST">
+        <form action="cadastro.php" method="POST">
 
             <div class="input-group">
                 <label for="name">Nome:</label>
@@ -28,13 +28,16 @@
             </div>
 
             <div class="input-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
+                <label for="password" required>Senha:</label>
+                <input type="password" id="password" name="password" required minlength="5" maxlength="8">
             </div>
+
+            <input type="submit" id="botaocadastro" value=" Confirmar">
             
-            <button id="botãocadastro">Confirmar</button>
         </form>
     </div>
+
+
 </body>
 <script src="./cadastro.js"></script>
 </html>

@@ -12,21 +12,79 @@ document.getElementById('eudora').addEventListener('click',function(){
     window.location.href = 'https://www.eudora.com.br/?gclid=72289a614bc1101fdec9fdf8083d7a19&gclsrc=3p.ds&msclkid=72289a614bc1101fdec9fdf8083d7a19&utm_source=bing&utm_medium=cpc&utm_campaign=%5Be-com%5D%20%5BPerformance%5D%20%5BInstitucional%5D%20-%20PSQ%20Eudora%20%5BE%5D&utm_term=eudora&utm_content=%5BTexto%5D%20Eudora%20-%20Brand%20-%20Puro%20-%20%20%5BE%5D';
 });
 
+document.getElementById('jequiti').addEventListener('click',function(){
+    window.location.href = 'https://www.jequiti.com.br/?utm_source=mais&utm_medium=maisplataforma&utm_campaign=ederwagner&msclkid=600efe308cec1987d9b799941b0b0938';
+});
+
 //passagens
 
-document.addEventListener('DOMContentLoaded', function() { 
-    const carrinho = document.getElementById('carrinho'); 
-    const janelaCar = document.getElementById('janelaCar');
-    const fecharCarrinho= document.getElementById('fecharCarrinho');
-    
-    carrinho.addEventListener('click', function() { 
-        janelaCar.classList.toggle('open');
-    });
 
-    fecharCarrinho.addEventListener('click', function(){
-        janelaCar.classList.remove('open');
+    document.addEventListener('DOMContentLoaded', function() { 
+        const carrinhoBotao = document.getElementById('carrinho'); 
+        const janelaCar = document.getElementById('janelaCar'); 
+        const fecharCarrinho = document.getElementById('fecharCarrinho'); 
+        const carrinhoContainer = document.getElementById("itens-carrinho"); 
+    
+        carrinhoBotao.addEventListener('click', function() { 
+            janelaCar.classList.toggle('open'); 
+        });
+    
+        fecharCarrinho.addEventListener('click', function() {
+            janelaCar.classList.remove('open'); 
+        });
+    
+        function atualizarCarrinho() {
+            carrinhoContainer.innerHTML = ""; 
+    
+            carrinho.forEach(item => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <strong>País:</strong> ${item.nomePais}   
+                    <strong>Tipo:</strong> ${item.tipoPassagem} <br>
+                    <strong>Valor:</strong> R$ ${item.preçoTotal.toFixed(2)} 
+                    <strong>Data:</strong> ${item.dataIda} <br>
+                    <strong>Quantidade de Dias:</strong> ${item.qtdDias} <br>
+                    <strong>Nome do Hotel:</strong> ${item.nomeHotel} <br>
+                `;
+                carrinhoContainer.appendChild(li);
+            });
+        }
+    
+        if (carrinho.length > 0) {
+            atualizarCarrinho();
+        }
+    
+        const botoesComprar = document.querySelectorAll(".buttoncompra");
+        botoesComprar.forEach(botao => {
+            botao.addEventListener("click", function() {
+                const destino = this.getAttribute("data-nome_pais");
+                const valor = parseFloat(this.getAttribute("data-preçoTotal"));
+                const tipoPassagem = this.getAttribute("data-tipo_passagem");
+                const dataIda = this.getAttribute("data-dataIda");
+                const qtdDias = parseInt(this.getAttribute("data-qtdDias"));
+                const nomeHotel = this.getAttribute("data-nome_hotel");
+    
+                const item = {
+                    nomePais: destino,
+                    tipoPassagem: tipoPassagem,
+                    preçoTotal: valor,
+                    dataIda: dataIda,
+                    qtdDias: qtdDias,
+                    nomeHotel: nomeHotel
+                };
+    
+                carrinho.push(item);
+    
+                atualizarCarrinho();
+            });
+        });
+    
     });
-});
+    
+
+
+
+
 
 document.getElementById('botaoFinalizar').addEventListener('click',function(){
     window.location.href = '../Pagamento/pagamento.html';
@@ -57,7 +115,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     fechardesc.addEventListener('click', function(){
         pais.classList.remove('open');
+        
     });
+
 });
 
 document.addEventListener('DOMContentLoaded', function() { 
@@ -214,6 +274,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() { 
+    const descrição18 = document.getElementById('descrição18'); 
+    const pais18 = document.getElementById('pais18');
+    const fechardesc18= document.getElementById('fechardesc18');
+    
+    descrição18.addEventListener('click', function() { 
+        pais18.classList.toggle('open');
+    });
+
+    fechardesc18.addEventListener('click', function(){
+        pais18.classList.remove('open');
+    });
+});
+
 //pacotes
 
 document.addEventListener('DOMContentLoaded', function() { 
@@ -300,19 +374,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//carrinho
-const passagens = [
-    "2025-03-15", // Ex
-  ];
-
-  const itensCarrinho = document.getElementById("itens-carrinho");
-
-  passagens.forEach(function(data) {
-    const listItem = document.createElement("li");
-    listItem.textContent = `Data da Viagem: ${data}`;
-    cartList.appendChild(listItem);
-  });
-
-  document.getElementsByClassName('buttoncompra').addEventListener('click',function(){
-    ;
-});
+//preço aleatório

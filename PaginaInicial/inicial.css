@@ -49,7 +49,7 @@ body{
 }
 #conteudo{
     flex: 1;
-    height: 250px;
+    height: 300px;
 }
 #logo{
     width: 90px;
@@ -59,7 +59,7 @@ body{
     position: fixed; 
     right: -30px; 
     top: 0; 
-    width: 300px; 
+    width: 100% ; 
     height: 100%; 
     background-color: white; 
     border-left: 1px solid white; 
@@ -83,8 +83,10 @@ body{
     width: 200px;
     height: 40px;
     color: white;
-    margin-top: 170%;
+    margin-top: 100%;
    margin-left: 40px;
+   margin-bottom: auto;
+
 }
 #botaoFinalizar:hover{
     background-color: rgb(70, 112, 201);
@@ -190,7 +192,7 @@ body{
     height: 550px; 
     background-color: white;
     border-left: 1px solid white; 
-    padding: 20px; 
+    padding: 100px; 
     transition: right 0.3s;
     display: none;
     color: black;
@@ -304,37 +306,41 @@ body{
     width: 135px;
     left: 954px;
 }
+#brasil{
+    width: 135px;
+    top: 470px;
+}
 
 #pac{
-    top: 460px;
+    top: 598px;
     position: absolute;
 }
 #argpac{
-    top: 500px;
+    top: 650px;
     width: 135px;
 }
 #perupac{
-    top: 500px;
+    top: 650px;
     width: 135px;
     left: 207px;
 }
 #chilepac{
-    top: 500px;
+    top: 650px;
     width: 135px;
     left: 395px ;
 }
 #urupac{
-    top: 500px;
+    top: 650px;
     width: 135px;
     left: 580px;
 }
 #bolipac{
-    top: 500px;
+    top: 650px;
     width: 135px;
     left: 765px;
 }
 #venepac{
-    top: 500px;
+    top: 650px;
     width: 135px;
     left: 954px;
 }
@@ -356,7 +362,7 @@ span{
 }
 #eud{
     width: 200px;
-    height: 300px;
+    height: 250px;
 }
 #eudora{
     position: absolute;
@@ -365,8 +371,30 @@ span{
     border: 0;
     top: 410px;
 }
+#jeq{
+    width: 200px;
+    height: 100px;
+}
+#jequiti{
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    border: 0;
+    top: 680px;
+}
+
 .data{
     display: flex;
     align-items: center;
     gap: 3px;
+}
+#chega{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.verpreço{
+    border-radius: 10px;
+
+    background-color: #1B375C;
 }

@@ -25,7 +25,7 @@ body{
     display: flex;
     justify-content: center;
 }
-#nomeusu{
+#email{
     border: 1px solid #ccc;
     border-radius: 20px;
     height: 30px;
