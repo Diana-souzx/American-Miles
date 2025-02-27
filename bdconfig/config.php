@@ -3,7 +3,7 @@
     $hostname = 'localhost';
     $bd_user= 'root';
     $bd_name = 'americanmiles';
-    $bd_password = 'root';
+    $bd_password = 'Diana0798*';
 
     $conect = new mysqli($hostname, $bd_user, $bd_password);
 
